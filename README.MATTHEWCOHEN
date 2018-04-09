@@ -1,0 +1,1 @@
+Billing will include classes to compute the sales tax, adding the tab, validation of credit cards and dispensing change. The return will most likely be a stringArray
