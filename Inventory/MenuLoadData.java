@@ -82,7 +82,7 @@ public class MenuLoadData{
 	 * 
 	 * @param iparams are command line arguments array "args" 
 	 */
-	void sourceData(String[] iparams) {
+	void sourceData() {
 		
 	 int arraySize=0;
 	 int rowNum=0;
@@ -90,16 +90,9 @@ public class MenuLoadData{
 	 //Used for Testing without having to change Eclipse.
 	 //iparams[1] = null;
 	 
-	 
-	 //if (iparams.length != 0 && iparams[0].equals("-df") && iparams[1] != null){
-	 if (iparams.length != 0){
-			System.out.println("Using Path: " + iparams[0]);
-			loadfile=iparams[0];
-		}
-	 else {
-		 	FileChooser fc = new FileChooser();
-			dfile = fc.selectFile(dfile);
-	 }
+	  FileChooser fc = new FileChooser();
+	  dfile = fc.selectFile(dfile);
+
 	 
 		
 	 	arraySize = this.getDataSize();
