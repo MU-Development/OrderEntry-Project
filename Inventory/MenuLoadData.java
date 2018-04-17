@@ -97,7 +97,8 @@ public class MenuLoadData{
 			loadfile=iparams[0];
 		}
 	 else {
-		 System.out.print("Error File Not Found");
+		 	FileChooser fc = new FileChooser();
+			dfile = fc.selectFile(dfile);
 	 }
 	 
 		
