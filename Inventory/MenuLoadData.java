@@ -91,7 +91,7 @@ public class MenuLoadData{
 	 //iparams[1] = null;
 	 
 	  FileChooser fc = new FileChooser();
-	  dfile = fc.selectFile(dfile);
+	  loadfile = fc.selectFile(dfile);
 
 	 
 		
