@@ -9,7 +9,7 @@ public class MenuLoadData{
 	private BufferedReader buff = null;
 	private FileReader fileRd = null;
 	private String line = "test";
-	private String loadfile = null;
+	private String loadfile=null;
 	private StringTokenizer tok = null;
 	private MenuData[] mdata;
 	
@@ -74,27 +74,21 @@ public class MenuLoadData{
 		}
 	}
 	
-	
-	void sourceData() {
-		
-	 int arraySize=0;
-	 int rowNum=0;
+	void sourceData() {	
+		int arraySize=0;
+		int rowNum=0;
 	  
 	 
-	  FileChooser fc = new FileChooser();
-	  loadfile = fc.selectFile(loadfile);
-	 
+	FileChooser fc = new FileChooser();
+	loadfile = fc.selectFile(loadfile);
+	 	
 	 	arraySize = this.getDataSize();
 		System.out.println("Items of Menu: "+ arraySize);
 		mdata = new MenuData[arraySize];
 		
-		//Each element in the mdata references a MarketData class.
-		//This loop is allocating storage to hold the variables.
 		for(int x=0; x < mdata.length; x++){
 			mdata[x] = new MenuData();
 		}
-		
-	
 	try{
 		fileRd = new FileReader(loadfile);
 		buff = new BufferedReader(fileRd);
@@ -103,26 +97,13 @@ public class MenuLoadData{
 		
 			//Need to separate the file based off commas. Using StringTokenizer
 			tok = new StringTokenizer(line, ",");
-			
-				/* While Function has been Depreciated - Not using 2-Dimensional Array
-				 * 
-				 * while (tok.hasMoreElements()){
-					for(int colNum=0;colNum<7;colNum++){
-						stockData[rowNum][colNum] = tok.nextElement().toString();	
-						}
-						
-					}
-				 
-				 */
-				
-				/*Double.parseDouble throws a NumberFormatException */
 				mdata[rowNum].Name = tok.nextElement().toString();
 				mdata[rowNum].small = Double.parseDouble(tok.nextElement().toString());	
 				mdata[rowNum].medium = Double.parseDouble(tok.nextElement().toString());	
 				mdata[rowNum].large = Double.parseDouble(tok.nextElement().toString());	
-				rowNum++;
-				
-			}//While End Readline
+				mdata[rowNum].quantity = Double.parseDouble(tok.nextElement().toString());
+				rowNum++;		
+			}
 		
 	} catch (NumberFormatException nfe){
 		System.out.println("There was a problem converting the String to a Double");

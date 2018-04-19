@@ -4,5 +4,5 @@ public class MenuData{
 	double small;
 	double medium;
 	double large;
-	int quantity;
+	double quantity;
 }
