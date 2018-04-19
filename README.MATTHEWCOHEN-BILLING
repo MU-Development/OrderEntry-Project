@@ -1,2 +1,0 @@
-Billing Module -- Matthew Cohen -- Billing will include classes to compute the sales tax, adding the tab, validation of credit cards and dispensing of proper change. The return will most likely be a StringArray.
-
