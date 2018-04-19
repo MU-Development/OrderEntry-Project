@@ -12,7 +12,7 @@ public class Billing
     private String[][] billing2D = new String[100][100];
     private double totalBill = 0;
 
-    double constantTax = 1.06625;
+    private double constantTax = 1.06625;
     private String[][] inventory2D = new String[100][100];
     private ArrayList<String> items = new ArrayList<String>();
     private ArrayList<String> qty = new ArrayList<String>();
