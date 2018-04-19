@@ -1,4 +1,3 @@
-
 public class MenuData{
 
 	String Name;
@@ -6,5 +5,4 @@ public class MenuData{
 	double medium;
 	double large;
 	int quantity;
-	
 }
