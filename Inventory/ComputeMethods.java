@@ -10,28 +10,18 @@ public class ComputeMethods {
 		int itemNumber = 0;
 		double price = 0;
 		for(int x = 0; x < smdata.length; x++ ) {
-			if(name == smdata[x].Name) {
+			if(name == smdata[x].name) {
 				itemNumber = x;
 			}
 		}
-		System.out.println(smdata[itemNumber].Name);
-		if(size == "small") {
-		System.out.println("$" + smdata[itemNumber].small);
-		price = (int) smdata[itemNumber].small;
-		}else if(size == "medium") {
-		System.out.println("$" + smdata[itemNumber].medium);	
-		price = (int) smdata[itemNumber].medium;
-		}else {
-		System.out.println("$" + smdata[itemNumber].large);	
-		price = (int) smdata[itemNumber].large;
-		}
+		price = smdata[itemNumber].cost;
 		return price;
 	}
 	
 	void addItem(String name, String size) {
 		int itemNumber = 0;
 		for(int x = 0; x < smdata.length; x++ ) {
-			if(name == smdata[x].Name) {
+			if(name == smdata[x].name) {
 				itemNumber = x;
 			}
 		}
@@ -41,7 +31,7 @@ public class ComputeMethods {
 	void removeItem(String name, String size) {
 		int itemNumber = 0;
 		for(int x = 0; x < smdata.length; x++ ) {
-			if(name == smdata[x].Name) {
+			if(name == smdata[x].name) {
 				itemNumber = x;
 			}
 		}

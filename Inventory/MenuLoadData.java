@@ -67,10 +67,8 @@ public class MenuLoadData{
 	
 	void printArrayOfObjects(){
 		for (int row=0; row < mdata.length; row++){
-			System.out.println("Food: " + mdata[row].Name);
-			System.out.println("  Small Combo: "+ mdata[row].small);	
-			System.out.println("  Medium Combo: "+ mdata[row].medium);	
-			System.out.println("  Large Combo: "+ mdata[row].large);	
+			System.out.println("Food: " + mdata[row].name);
+			System.out.println(" Cost: "+ mdata[row].cost);	
 		}
 	}
 	
@@ -97,10 +95,8 @@ public class MenuLoadData{
 		
 			//Need to separate the file based off commas. Using StringTokenizer
 			tok = new StringTokenizer(line, ",");
-				mdata[rowNum].Name = tok.nextElement().toString();
-				mdata[rowNum].small = Double.parseDouble(tok.nextElement().toString());	
-				mdata[rowNum].medium = Double.parseDouble(tok.nextElement().toString());	
-				mdata[rowNum].large = Double.parseDouble(tok.nextElement().toString());	
+				mdata[rowNum].name = tok.nextElement().toString();
+				mdata[rowNum].cost = Double.parseDouble(tok.nextElement().toString());	
 				mdata[rowNum].quantity = Double.parseDouble(tok.nextElement().toString());
 				rowNum++;		
 			}
