@@ -25,6 +25,7 @@ public class ComputeMethods {
 				itemNumber = x;
 			}
 		}
+		System.out.println("Added" + smdata[itemNumber].name + "to inventory" );
 		smdata[itemNumber].quantity = smdata[itemNumber].quantity ++;
 	}
 	
@@ -35,6 +36,11 @@ public class ComputeMethods {
 				itemNumber = x;
 			}
 		}
+		System.out.println("Removed" + smdata[itemNumber].name + "from inventory" );
 		smdata[itemNumber].quantity = smdata[itemNumber].quantity --;
+	}
+	
+	MenuData[] getInventory() {
+		return smdata;
 	}
 }

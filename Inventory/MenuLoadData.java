@@ -14,14 +14,6 @@ public class MenuLoadData{
 	private MenuData[] mdata;
 	
 	/**
-	 * Getter method for MarketData
-	 * @return
-	 */
-	MenuData[] getMenu(){
-		return(mdata);
-	}
-	
-	/**
 	 * Getter method for Size of Data
 	 * @return
 	 */
