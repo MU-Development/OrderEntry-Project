@@ -1,2 +1,12 @@
 Nereida Barrios Dunkin Donuts panel I will put the api later
+Dunkin Dounuts
+Display items and have a check box next to the item showing what they selected.
+Once item is selected have a drop box that gives the options either amount of size.
+Once amount/size is collected the price appears in the textbox.
+Have coupon button that has a text field of the date and either a 10/15/20% which will have a true or false booleanand send it to the billing.
+Have checkout button that sends information to the billing and coupon information. 
+Would pass one data structure to billing. (eg:two dim array, arrayofObjects).
+Allow for a text field to show the amount from billing that does straight to textbox.
+Pricing would pass a parameter to Dunkin Donuts.
+Have a check promotions hidden which Eric will write the method. 
 
