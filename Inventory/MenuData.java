@@ -1,8 +1,6 @@
 public class MenuData{
 
-	String Name;
-	double small;
-	double medium;
-	double large;
+	String name;
+	double cost;
 	double quantity;
 }
