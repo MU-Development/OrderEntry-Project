@@ -9,7 +9,7 @@ public class MenuLoadData{
 	private BufferedReader buff = null;
 	private FileReader fileRd = null;
 	private String line = "test";
-	private String loadfile=null;
+	private String loadfile = null;
 	private StringTokenizer tok = null;
 	private MenuData[] mdata;
 	
@@ -75,26 +75,15 @@ public class MenuLoadData{
 	}
 	
 	
-	/*
-	 * Method will read the data from a file, will split the structured data
-	 * based off commas that represent the columns, than 
-	 * load the data into a 2-dimension array.(Depreciated)
-	 * 
-	 * @param iparams are command line arguments array "args" 
-	 */
 	void sourceData() {
 		
 	 int arraySize=0;
 	 int rowNum=0;
 	  
-	 //Used for Testing without having to change Eclipse.
-	 //iparams[1] = null;
 	 
 	  FileChooser fc = new FileChooser();
-	  loadfile = fc.selectFile(dfile);
-
+	  loadfile = fc.selectFile(loadfile);
 	 
-		
 	 	arraySize = this.getDataSize();
 		System.out.println("Items of Menu: "+ arraySize);
 		mdata = new MenuData[arraySize];
