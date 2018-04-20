@@ -8,8 +8,9 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TacoBell extends Company
+public class TacoBell extends Company 
 {
    public TacoBell(){
-    }
+       super ("Taco Bell");
+   }
 }

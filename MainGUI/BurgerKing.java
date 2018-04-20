@@ -10,5 +10,7 @@ import java.util.*;
  */
 public class BurgerKing extends Company
 {
-    public BurgerKing() {}
+    public BurgerKing() {
+        super("Burger King");
+    }
 }
