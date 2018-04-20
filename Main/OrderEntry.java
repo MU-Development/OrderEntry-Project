@@ -18,8 +18,9 @@ public class OrderEntry {
 		MenuLoadData menuData = new MenuLoadData();
 		menuData.sourceData();
 		md = menuData.getMenu();
+		menuData.printArrayOfObjects();
 		
-		//OrderEntryUI UI = new OrderEntryUI(Title);
+		OrderEntryUI UI = new OrderEntryUI("Title", ud, md);
 				
 	}
 }
