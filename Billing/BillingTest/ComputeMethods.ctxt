@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ComputeMethods
+comment1.params=data
+comment1.target=ComputeMethods(MenuData[])
+comment2.params=name\ size
+comment2.target=double\ computeNamePrice(java.lang.String,\ java.lang.String)
+comment3.params=name\ size
+comment3.target=void\ addItem(java.lang.String,\ java.lang.String)
+comment4.params=name\ size
+comment4.target=void\ removeItem(java.lang.String,\ java.lang.String)
+comment5.params=
+comment5.target=MenuData[]\ getInventory()
+numComments=6

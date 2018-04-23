@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MenuLoadData
+comment1.params=
+comment1.target=int\ getDataSize()
+comment1.text=\r\n\ Getter\ method\ for\ Size\ of\ Data\r\n\ @return\r\n
+comment2.params=
+comment2.target=MenuData[]\ getMdata()
+comment3.params=s
+comment3.target=void\ setDataSize(int)
+comment3.text=\r\n\ Setter\ method\ for\ Size\ of\ Data\r\n
+comment4.params=
+comment4.target=void\ countLines()
+comment4.text=\r\n\ A\ Integer\ that\ represents\ the\ size\ of\ the\ data\ file.\r\n\ Set\ the\ size\ using\ setter\ setDataSize.\r\n
+comment5.params=
+comment5.target=void\ printArrayOfObjects()
+comment5.text=\r\n\ Helper\ method\ to\ print\ out\ the\ Array\ of\ Objects.\r\n
+comment6.params=
+comment6.target=void\ sourceData()
+numComments=7

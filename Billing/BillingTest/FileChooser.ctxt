@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=FileChooser
+comment0.text=\r\n\ FileChooser\ is\ a\ Dialog\ box\ that\ interacts\ with\ the\ user\r\n\ to\ select\ a\ file.\ \r\n\ @author\ U146576\r\n\ @since\ jdk1.5\r\n
+comment1.params=dfile
+comment1.target=java.lang.String\ selectFile(java.lang.String)
+numComments=2

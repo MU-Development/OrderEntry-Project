@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Billing
+comment1.params=array1
+comment1.target=Billing(java.lang.String[][])
+comment1.text=\r\n\ Billing\ constructor\r\n\ @param\ String\ 2d\ array\r\n
+comment2.params=array1\ menu
+comment2.target=Billing(java.lang.String[][],\ MenuData[])
+comment3.params=array1\ coup\ bkDDOrTB
+comment3.target=Billing(java.lang.String[][],\ java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ Billing\ 2nd\ constructor\ used\ for\ coupons\r\n\ @param\ String\ 2d\ array,\ string,\ string\r\n
+comment4.params=tax
+comment4.target=void\ setTax(double)
+comment4.text=\r\n\ SetTax\ sets\ the\ tax\ rate\r\n\ @param\ double\r\n
+comment5.params=
+comment5.target=void\ setTax()
+comment5.text=\r\n\ SetTax\ overloaded\ takes\ in\ user\ input\r\n\ \r\n
+comment6.params=
+comment6.target=double\ checkOut()
+comment6.text=\r\n\ ComputeBill\ computes\ the\ total\ of\ the\ bill\r\n\ @return\ double\r\n
+comment7.params=
+comment7.target=double\ computeSalesTax()
+comment7.text=\r\n\ ComputeSalesTax\ computes\ the\ sales\ tax\ with\ the\ bill\r\n\ @return\ double\r\n
+numComments=8
