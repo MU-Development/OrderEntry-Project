@@ -1,40 +1,84 @@
 import java.io.*;
 import java.util.*;
-import java.text.SimpleDateFormat;
-import java.text.DateFormat;
-import java.util.Date;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.text.ParseException;
+import java.lang.Object.*;
+import java.util.stream.Collectors;
+import java.util.Arrays;
 /**
- * Write a description of class Test here.
+ * Test class for coupon codes.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Daniel Holmes
+ * @3/23/2018
  */
 public class Test{
+    static ArrayList<BKCoupons> BKCouponList = new ArrayList<BKCoupons>(10);
+    static ArrayList<TBCoupons> TBCouponList = new ArrayList<TBCoupons>(10);
+    static ArrayList<DDCoupons> DDCouponList = new ArrayList<DDCoupons>(10);
     public static void main(String[] args){
-       
-        
-       String couponCode = null;
-       
-       int num2 = 10;
-       ArrayList<BKCoupons> BK15CouponList = new ArrayList<BKCoupons>(num2);
-       for(int i = 0; i < num2; i++){
-           BKCoupons c = new BKCoupons(couponCode, 15);
-           BK15CouponList.add(c);
-           StringBuilder strBuild = new StringBuilder();
-           System.out.println(c.getBK15() + " " + strBuild.append(c.getBK15Discount()));
+      UISetup uiset = new UISetup();
+      String couponCode = null;
+      int num2 = 1;
+      for(int i = 0; i < num2; i++){
+           BKCoupons c = new BKCoupons(BKCoupons.THIRTY_PERCENT);
+           BKCoupons c1 = new BKCoupons(BKCoupons.TWENTY_PERCENT);
+           BKCoupons c2 = new BKCoupons(BKCoupons.FIFTEEN_PERCENT);
+           BKCouponList.add(c);
+           BKCouponList.add(c1);
+           BKCouponList.add(c2);
        }
-       
-       int num3 = 10;
-       ArrayList<DDCoupons> DD15CouponList = new ArrayList<DDCoupons>(num3);
-       for(int i = 0; i < num3; i++){
-           DDCoupons c2 = new DDCoupons(couponCode,15);
-           DD15CouponList.add(c2);
-           StringBuilder strBuild = new StringBuilder();
-           System.out.println(c2.getDD20() + " " + strBuild.append(c2.getDD20Discount()));
+      System.out.println(Arrays.toString(BKCouponList.toArray()));
+      int num3 = 1;
+      for(int i = 0; i < num3; i++){
+           TBCoupons c = new TBCoupons(TBCoupons.THIRTY_PERCENT);
+           TBCoupons c1 = new TBCoupons(TBCoupons.TWENTY_PERCENT);
+           TBCoupons c2 = new TBCoupons(TBCoupons.FIFTEEN_PERCENT);
+           TBCouponList.add(c);
+           TBCouponList.add(c1);
+           TBCouponList.add(c2);
        }
+      System.out.println(Arrays.toString(TBCouponList.toArray()));
+      int num4 = 1;
+      for(int i = 0; i < num4; i++){
+           DDCoupons c = new DDCoupons(DDCoupons.THIRTY_PERCENT);
+           DDCoupons c1 = new DDCoupons(DDCoupons.TWENTY_PERCENT);
+           DDCoupons c2 = new DDCoupons(DDCoupons.FIFTEEN_PERCENT);
+           DDCouponList.add(c);
+           DDCouponList.add(c1);
+           DDCouponList.add(c2);
+       }
+      System.out.println(Arrays.toString(DDCouponList.toArray()));
+    }
+    public boolean isBKValid(String userCouponCode){
+        System.out.println("user:"+userCouponCode);
+        for (BKCoupons coupon :  BKCouponList) {
+            System.out.println(coupon);
+            if (coupon.toString().equals(userCouponCode)) {
+                BKCouponList.remove(userCouponCode);
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean isTBValid(String userCouponCode){
+        System.out.println("user:"+userCouponCode);
+        for (TBCoupons coupon :  TBCouponList) {
+            System.out.println(coupon);
+            if (coupon.toString().equals(userCouponCode)) {
+                TBCouponList.remove(userCouponCode);
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean isDDValid(String userCouponCode){
+        System.out.println("user:"+userCouponCode);
+        for (DDCoupons coupon :  DDCouponList) {
+            System.out.println(coupon);
+            if (coupon.toString().equals(userCouponCode)) {
+                DDCouponList.remove(userCouponCode);
+                return true;
+            }
+        }
+        return false;
     }
 }
 

@@ -13,50 +13,25 @@ import java.util.Calendar;
  */
 public class BKCoupons extends Coupon{
     private double discount;
-    public BKCoupons(String couponCode, double discount){
-        super(couponCode);
+    public static final double THIRTY_PERCENT = 30;
+    public static final double  TWENTY_PERCENT = 20;
+    public static final double FIFTEEN_PERCENT = 15;
+    public BKCoupons(double discount){
         this.discount = discount;
     }
-    public void setBK15(String couponCode, double discount){
-        this.couponCode = couponCode;
-        this.discount = discount;
+    public void setDiscount(double discount) {
+    	this.discount = discount;  
     }
-    public String getBK15(){
-        return "bk15-" + getCouponCode();
-    }
-    public Double getBK15Discount(){
-        discount = 15/100;
-        return price * discount;
-    }
-    public void setBK20(String couponCode, double discount){
-        this.couponCode = couponCode;
-    }
-    public String getBK20(){
-        return "bk20-" + getCouponCode();
-    }
-    public Double getBK20Discount(){
-        discount = 20/100;
-        return price * discount;
-    }
-    public void setBK30(String couponCode, double discount){
-        this.couponCode = couponCode;
-    }
-    public String getBK30(){
-        return "bk30-" + getCouponCode();
-    }
-    public Double getBK30Discount(){
-        discount = 30/100;
-        return price * discount;
+    public double getDiscount(){
+        return discount; 
     }
     @Override
     public double price(){
-        if(Boolean.parseBoolean(getBK15())){
-            price = price - getBK15Discount();
-        } else if(Boolean.parseBoolean(getBK20())){
-            price = price - getBK20Discount();
-        } else if(Boolean.parseBoolean(getBK30())){
-            price = price - getBK30Discount();
-        }
-        return price;
+        //return price * (1 - discount);  //if discount is a decimal (e.g. .15
+        return price * (1 - (discount/100.0)); //if discount is a whole number representing the percent discount.
+    }
+    public String toString(){
+        int discountInt = (int) Math.round(discount);
+        return "bk" + discountInt + "-" + getCouponCode();
     }
 }

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=DDCoupons
+comment0.text=\n\ Class\ for\ Dunkin\ Donuts\ coupons.\n\n\ @Daniel\ Holmes\n\ @4/23/2018\n
+comment1.params=discount
+comment1.target=DDCoupons(double)
+comment2.params=discount
+comment2.target=void\ setDiscount(double)
+comment3.params=
+comment3.target=double\ getDiscount()
+comment4.params=
+comment4.target=double\ price()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

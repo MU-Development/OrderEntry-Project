@@ -1,62 +1,32 @@
-import java.io.*;
-import java.util.*;
-import java.text.SimpleDateFormat;
-import java.text.DateFormat;
-import java.util.Date;
-import java.time.LocalDateTime;
-import java.util.Calendar;
+
 /**
- * Write a description of class BKCoupons here.
+ * Write a description of class TB here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TBCoupons extends Coupon{
-    private double discount;
-    public TBCoupons(String couponCode, double discount){
-        super(couponCode);
+public class TBCoupons extends Coupon
+{
+  private double discount;
+    public static final double THIRTY_PERCENT = 30;
+    public static final double  TWENTY_PERCENT = 20;
+    public static final double FIFTEEN_PERCENT = 15;
+    public TBCoupons(double discount){
         this.discount = discount;
     }
-    public void setTB15(String couponCode, double discount){
-        this.couponCode = couponCode;
-        this.discount = discount;
+    public void setDiscount(double discount) {
+    	this.discount = discount;  
     }
-    public String getTB15(){
-        return "tb15-" + getCouponCode();
-    }
-    public Double getTB15Discount(){
-        discount = 15/100;
-        return price * discount;
-    }
-    public void setTB20(String couponCode, double discount){
-        this.couponCode = couponCode;
-    }
-    public String getTB20(){
-        return "tb20-" + getCouponCode();
-    }
-    public Double getTB20Discount(){
-        discount = 20/100;
-        return price * discount;
-    }
-    public void setTB30(String couponCode, double discount){
-        this.couponCode = couponCode;
-    }
-    public String getTB30(){
-        return "tb30-" + getCouponCode();
-    }
-    public Double getTB30Discount(){
-        discount = 30/100;
-        return price * discount;
+    public double getDiscount(){
+        return discount; 
     }
     @Override
     public double price(){
-        if(Boolean.parseBoolean(getTB15())){
-            price = price - getTB15Discount();
-        } else if(Boolean.parseBoolean(getTB20())){
-            price = price - getTB20Discount();
-        } else if(Boolean.parseBoolean(getTB30())){
-            price = price - getTB30Discount();
-        }
-        return price;
+        //return price * (1 - discount);  //if discount is a decimal (e.g. .15
+        return price * (1 - (discount/100.0)); //if discount is a whole number representing the percent discount.
+    }
+    public String toString(){
+        int discountInt = (int) Math.round(discount);
+        return "tb" + discountInt + "-" + getCouponCode();
     }
 }

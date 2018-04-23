@@ -1,11 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.text.SimpleDateFormat;
-import java.text.DateFormat;
-import java.util.Date;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-
 /**
  * Write a description of class Coupon here.
  *
@@ -14,14 +8,16 @@ import java.util.Calendar;
  */
 public abstract class Coupon{
     protected String couponCode;
+    protected String userCouponCode;
     protected double price;
     public static final String ranString = "abcdefghijklmnopqrtuvwxyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*+=";
     private static final int stringLength = 8;
-    public Coupon(String couponCode){
-        this.couponCode = couponCode;
+    public static final String EMPTY_couponCode = null;
+    public Coupon(){
+        this.couponCode = randString();
     }
     public abstract double price();
-    public String randString(){
+    private String randString(){
         StringBuffer sbuff = new StringBuffer();
         for(int i = 0; i < stringLength; i++){
             int num = randNum();
@@ -44,6 +40,6 @@ public abstract class Coupon{
         this.couponCode = couponCode;
     }
     public String getCouponCode(){
-        return randString();
+        return couponCode;
     }
 }
