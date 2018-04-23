@@ -16,13 +16,13 @@ public class Billing
     private String[][] billing2D;
     private double totalBill = 0;
     private double constantTax = 1.06625;
-    private String[][] inventory2D = new String[100][100];
+    private String[][] inventory2D = new String[100][3];
     private ArrayList<String> items = new ArrayList<String>();
     private ArrayList<String> qty = new ArrayList<String>();
     private String foodLoc = "";
     private String coupon = "";
-    //MenuData [] myMenu;
-    //ComputeMethods remove;
+    private MenuData [] myMenu;
+    private ComputeMethods remove;
     /**
      * Billing constructor
      * @param String 2d array
@@ -32,11 +32,11 @@ public class Billing
        
         billing2D = array1;  
     }
-    Billing(String [][] array1, String filler)//, MenuData [] menu)
+    Billing(String [][] array1,  MenuData [] menu)
     {
-     // myMenu = menu;
-     // remove = new ComputeMethods(menu);
-        billing2D = array1;
+      myMenu = menu;
+      remove = new ComputeMethods(menu);
+      billing2D = array1;
      
     }
 
@@ -87,7 +87,7 @@ public class Billing
     }
 
     /**
-     * ComputeBill computes the total of the bill
+     * ComputeBill computes the total of the bill and if a coupon is present will take the discount off
      * @return double
      */
     public double checkOut()
@@ -106,27 +106,32 @@ public class Billing
             
             holdPrice = holdPrice*holdItems;
             totalBill = holdPrice + totalBill;
-            /**
+            
             if (myMenu != null)
             {
-              remove.removeItem(name, quantity);
+              remove.removeItem(name, quantity); // Removes the item from the inventory list depending on if myMenu is instantiated.
             }
-            */
+            
         }
         if(coupon != null)
         {
-            //Coupon myCoupon;
+            String coupon1 = "";
+            Coupon myCoupon;
             if(foodLoc.equalsIgnoreCase("BK"))
             {
-                //myCoupon = new BKCoupons(coupon)
+                myCoupon = new BKCoupons(coupon, totalBill);
+                myCoupon.setCouponCode(coupon);
+                coupon1=myCoupon.getCouponCode();
+                //myCoupon.setBK15(coupon1, totalBill);
             }
             else if(foodLoc.equalsIgnoreCase("DD"))
             {
-                //myCoupon = new DDCoupons(coupon)
+                myCoupon = new DDCoupons(coupon, totalBill);
             }
             else
             {
-               //myCoupon = new TBCoupons(coupon)
+               myCoupon = new TBCoupons(coupon, totalBill);
+               //myCoupon.setTB15(coupon, totalBill);
                
             }
 
