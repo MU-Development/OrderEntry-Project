@@ -1,4 +1,3 @@
-
 /**
  * Billing class provides an easy to use computation of a bill. The billing class also provides
  * a set tax rate at 6.625 % which can be changed by the user. 
@@ -9,7 +8,7 @@
 import java.util.*;
 public class Billing
 {
-    private String[][] billing2D = new String[100][100];
+    private String[][] billing2D;
     private double totalBill = 0;
 
     private double constantTax = 1.06625;
@@ -24,7 +23,7 @@ public class Billing
      */
     Billing(String [][] array1)
     {
-        billing2D = array1;
+        billing2D = array1;  
     }
 
     /**
@@ -44,6 +43,8 @@ public class Billing
      */
     public void setTax(double tax)
     {
+        tax = tax*.01;
+        tax = tax+1;
         constantTax = tax;
     }
 
@@ -65,8 +66,7 @@ public class Billing
         constantTax = tax;
         }
        catch(InputMismatchException e){
-        System.out.println("You have inputted an invalid number, please input a number >0 "+"\n"+
-        "tax rate should look like if 6% 1.06");
+        System.out.println("You have inputted an invalid number, please input a number >0 "+"\n");
         
         }
     }while(tax==0);
@@ -98,18 +98,19 @@ public class Billing
         }
         if(coupon != null)
         {
-            //Coupon myCoupon = new Coupon(coupon, totalBill)
+            //Coupon myCoupon;
             if(foodLoc.equalsIgnoreCase("BK"))
             {
-                //myCoupon.
+                //myCoupon = new BKCoupons(coupon)
             }
             else if(foodLoc.equalsIgnoreCase("DD"))
             {
-                //myCoupon.
+                //myCoupon = new DDCoupons(coupon)
             }
             else
             {
-                //myCoupon.
+               //myCoupon = new TBCoupons(coupon)
+               
             }
 
         }
