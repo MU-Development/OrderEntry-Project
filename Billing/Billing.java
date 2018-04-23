@@ -3,7 +3,7 @@
  * a set tax rate at 6.625 % which can be changed by the user. 
  * 
  * @author mcohen 
- * @version 3
+ * @version 4
  */
 import javax.swing.*;
 import java.io.*;
@@ -32,6 +32,10 @@ public class Billing
        
         billing2D = array1;  
     }
+    /**
+     * Billing 2nd constructor used to keep inventory
+     * @param String 2d array, and MenuData array
+     */
     Billing(String [][] array1,  MenuData [] menu)
     {
       myMenu = menu;
@@ -41,14 +45,16 @@ public class Billing
     }
 
     /**
-     * Billing 2nd constructor used for coupons
-     * @param String 2d array, string, string
+     * Billing 3rd constructor used for coupons
+     * @param String 2d array, MenuData array, string, string
      */
-    Billing(String [][] array1,String coup, String bkDDOrTB)
+    Billing(String [][] array1,MenuData [] menu,String coup, String bkDDOrTB)
     {
-        coupon = coup;
-        foodLoc = bkDDOrTB;
-        billing2D = array1;
+      myMenu = menu;
+      remove = new ComputeMethods(menu);
+      coupon = coup;
+      foodLoc = bkDDOrTB;
+      billing2D = array1;
     }
    
     /**
@@ -63,7 +69,7 @@ public class Billing
     }
 
     /**
-     * SetTax overloaded takes in user input
+     * SetTax overloaded method, takes in user input
      * 
      */
     public void setTax()
@@ -113,6 +119,9 @@ public class Billing
             }
             
         }
+        /**
+         * Coupon not functional 
+         */
         if(coupon != null)
         {
             String coupon1 = "";
@@ -141,7 +150,14 @@ public class Billing
         return (totalBill);
 
     }
-
+    /**
+     * Getter for MenuData
+     * @return MenuData array
+     */
+    public MenuData[] getMenu()
+    {
+        return (myMenu);
+    }
     /**
      * ComputeSalesTax computes the sales tax with the bill
      * @return double
