@@ -20,7 +20,7 @@ public class Billing
     private ArrayList<String> items = new ArrayList<String>();
     private ArrayList<String> qty = new ArrayList<String>();
     private String foodLoc = "";
-    private String coupon = "";
+    private double coupon = 0;
     private MenuData [] myMenu;
     private ComputeMethods remove;
     /**
@@ -48,7 +48,7 @@ public class Billing
      * Billing 3rd constructor used for coupons
      * @param String 2d array, MenuData array, string, string
      */
-    Billing(String [][] array1,MenuData [] menu,String coup, String bkDDOrTB)
+    Billing(String [][] array1,MenuData [] menu,double coup, String bkDDOrTB)
     {
       myMenu = menu;
       remove = new ComputeMethods(menu);
@@ -122,25 +122,25 @@ public class Billing
         /**
          * Coupon not functional 
          */
-        if(coupon != null)
+        if(coupon != 0)
         {
-            String coupon1 = "";
+           
             Coupon myCoupon;
             if(foodLoc.equalsIgnoreCase("BK"))
             {
-                myCoupon = new BKCoupons(coupon, totalBill);
-                myCoupon.setCouponCode(coupon);
-                coupon1=myCoupon.getCouponCode();
-                //myCoupon.setBK15(coupon1, totalBill);
+                myCoupon = new BKCoupons(coupon);
+                totalBill=totalBill-myCoupon.price(); 
+                
             }
             else if(foodLoc.equalsIgnoreCase("DD"))
             {
-                myCoupon = new DDCoupons(coupon, totalBill);
+                myCoupon = new DDCoupons(coupon);
+                totalBill=totalBill-myCoupon.price(); 
             }
             else
             {
-               myCoupon = new TBCoupons(coupon, totalBill);
-               //myCoupon.setTB15(coupon, totalBill);
+               myCoupon = new TBCoupons(coupon);
+               totalBill=totalBill-myCoupon.price(); 
                
             }
 
