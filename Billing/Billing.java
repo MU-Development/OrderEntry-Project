@@ -3,27 +3,41 @@
  * a set tax rate at 6.625 % which can be changed by the user. 
  * 
  * @author mcohen 
- * @version SP18
+ * @version 3
  */
+import javax.swing.*;
+import java.io.*;
 import java.util.*;
 public class Billing
 {
+    /**
+     * Instance Variables
+     */
     private String[][] billing2D;
     private double totalBill = 0;
-
     private double constantTax = 1.06625;
     private String[][] inventory2D = new String[100][100];
     private ArrayList<String> items = new ArrayList<String>();
     private ArrayList<String> qty = new ArrayList<String>();
     private String foodLoc = "";
     private String coupon = "";
+    //MenuData [] myMenu;
+    //ComputeMethods remove;
     /**
      * Billing constructor
      * @param String 2d array
      */
     Billing(String [][] array1)
     {
+       
         billing2D = array1;  
+    }
+    Billing(String [][] array1, String filler)//, MenuData [] menu)
+    {
+     // myMenu = menu;
+     // remove = new ComputeMethods(menu);
+        billing2D = array1;
+     
     }
 
     /**
@@ -36,7 +50,7 @@ public class Billing
         foodLoc = bkDDOrTB;
         billing2D = array1;
     }
-
+   
     /**
      * SetTax sets the tax rate
      * @param double
@@ -79,9 +93,7 @@ public class Billing
     public double checkOut()
     {
         String price ="";
-        //ComputeMethods remove = new ComputeMethods();
-        //.removeItem(string, int)
-
+        
         String quantity ="";
         String name ="";
         for(int i=0; i<billing2D.length;i++)
@@ -91,10 +103,15 @@ public class Billing
             name = billing2D[i][0];
             double holdPrice =  Double.parseDouble(price);
             double holdItems = Double.parseDouble(quantity);
-            //remove.removeItem(name, quantity);
+            
             holdPrice = holdPrice*holdItems;
             totalBill = holdPrice + totalBill;
-
+            /**
+            if (myMenu != null)
+            {
+              remove.removeItem(name, quantity);
+            }
+            */
         }
         if(coupon != null)
         {
